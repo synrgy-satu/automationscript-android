@@ -1,4 +1,4 @@
-package Appium.testcase.authentication;
+package Appium.testcase.transfer;
 
 import Appium.pages.HomePage;
 import Appium.pages.LoginPage;
@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LoginPositiveTest {
+public class TransferPositiveTest {
     protected static AndroidDriver driver;
 
     @BeforeClass
@@ -25,7 +25,7 @@ public class LoginPositiveTest {
     }
 
     @Test
-    public static void loginPositiveTest(){
+    public static void transferPositiveTest() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
@@ -37,6 +37,11 @@ public class LoginPositiveTest {
 
         //Assertion
         Assert.assertEquals(homePage.getUserWelcomeText(),"GILANGTESTING");
+
+        //Element action
+        homePage.clickTransferButton();
+        homePage.inputInformationAndTargetRekening("1111111155", "10000", "testing automation", "123456");
+        homePage.validationTransferSuccess();
     }
 
     @AfterClass
