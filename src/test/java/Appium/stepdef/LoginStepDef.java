@@ -46,7 +46,7 @@ public class LoginStepDef {
     }
 
     @When("user click on login button")
-    public void userClickLoginButton(){
+    public void userClickLoginButton() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickLanjutButton();
     }

@@ -40,7 +40,7 @@ public class TransferPositiveTest {
 
         //Element action
         homePage.clickTransferButton();
-        homePage.inputInformationAndTargetRekening("1111111155", "10000", "testing automation", "123456");
+        homePage.inputInformationAndTargetRekening("1111111155", "10000", "testing automation");
         homePage.validationTransferSuccess();
     }
 

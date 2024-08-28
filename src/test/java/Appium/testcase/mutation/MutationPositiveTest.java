@@ -1,4 +1,4 @@
-package Appium.testcase.authentication;
+package Appium.testcase.mutation;
 
 import Appium.pages.HomePage;
 import Appium.pages.LoginPage;
@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LoginPositiveTest {
+public class MutationPositiveTest {
     protected static AndroidDriver driver;
 
     @BeforeClass
@@ -25,7 +25,7 @@ public class LoginPositiveTest {
     }
 
     @Test
-    public static void loginPositiveTest() throws InterruptedException {
+    public static void mutationPositiveTest() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
@@ -37,6 +37,12 @@ public class LoginPositiveTest {
 
         //Assertion
         Assert.assertEquals(homePage.getUserWelcomeText(),"GILANGTESTING");
+
+        //Element action
+        homePage.clickMutationButton();
+        homePage.inputInformationMutation();
+        homePage.inputPIN();
+        homePage.mutationIsDisplayed();
     }
 
     @AfterClass

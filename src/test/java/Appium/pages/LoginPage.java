@@ -37,9 +37,10 @@ public class LoginPage {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void clickLanjutButton() {
+    public void clickLanjutButton() throws InterruptedException {
         driver.findElement(lanjutButton).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(lanjut2Button));
         driver.findElement(lanjut2Button).click();
+        Thread.sleep(1000);
     }
 }
